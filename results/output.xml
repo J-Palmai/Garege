@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.5 on win32)" generated="2026-03-23T09:04:11.624318" rpa="false" schemaversion="5">
+<suite id="s1" name="Garege" source="C:\Users\PalmaiJanos\Documents\GitHub\Garege">
+<suite id="s1-s1" name="Login" source="C:\Users\PalmaiJanos\Documents\GitHub\Garege\login.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2026-03-23T09:04:11.904937" level="INFO">Opening browser 'Chrome' to base url 'https://parking-garage-app.netlify.app/'.</msg>
+<arg>https://parking-garage-app.netlify.app/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-23T09:04:11.904539" elapsed="1.263855"/>
+</kw>
+<test id="s1-s1-t1" name="Sikeres bejelentkezes ervenyes felhasznalonevvel es jelszoval" line="14">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:13.173552" level="INFO">Typing text 'admin' into text field 'id=username'.</msg>
+<msg time="2026-03-23T09:04:13.357344" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-23T09:04:13.358201" level="FAIL">Element with locator 'id=username' not found.</msg>
+<arg>id=username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-03-23T09:04:13.172793" elapsed="0.191688">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:13.364887" elapsed="0.000169"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=login-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:13.365312" elapsed="0.000128"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=logout-btn</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:13.365687" elapsed="0.000130"/>
+</kw>
+<tag>login</tag>
+<status status="FAIL" start="2026-03-23T09:04:13.168673" elapsed="0.197443">Element with locator 'id=username' not found.</status>
+</test>
+<test id="s1-s1-t2" name="Sikertelen bejelentkezes hibas jelszo eseten" line="21">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:13.378981" level="INFO">Typing text 'admin' into text field 'id=username'.</msg>
+<msg time="2026-03-23T09:04:13.512749" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-23T09:04:13.513053" level="FAIL">Element with locator 'id=username' not found.</msg>
+<arg>id=username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-03-23T09:04:13.378505" elapsed="0.139182">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${INVALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:13.518037" elapsed="0.000145"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=login-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:13.518424" elapsed="0.000111"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Hibás felhasználónév vagy jelszó</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:13.518760" elapsed="0.000106"/>
+</kw>
+<tag>login</tag>
+<status status="FAIL" start="2026-03-23T09:04:13.370257" elapsed="0.148870">Element with locator 'id=username' not found.</status>
+</test>
+<test id="s1-s1-t3" name="Sikertelen bejelentkezes nem letezo felhasznaloval" line="28">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:13.531428" level="INFO">Typing text 'notexist' into text field 'id=username'.</msg>
+<msg time="2026-03-23T09:04:13.674935" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-21.png"&gt;&lt;img src="selenium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-23T09:04:13.675212" level="FAIL">Element with locator 'id=username' not found.</msg>
+<arg>id=username</arg>
+<arg>${INVALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-03-23T09:04:13.531022" elapsed="0.149014">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${INVALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:13.680400" elapsed="0.000153"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=login-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:13.680814" elapsed="0.000119"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Hibás felhasználónév vagy jelszó</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:13.681166" elapsed="0.000108"/>
+</kw>
+<tag>login</tag>
+<status status="FAIL" start="2026-03-23T09:04:13.527982" elapsed="0.153567">Element with locator 'id=username' not found.</status>
+</test>
+<test id="s1-s1-t4" name="Kotelezo mezok ellenorzese ures bejelentkezesi adatoknal" line="35">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:13.689675" level="INFO">Clicking button 'id=login-btn'.</msg>
+<msg time="2026-03-23T09:04:13.860569" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-22.png"&gt;&lt;img src="selenium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-23T09:04:13.860901" level="FAIL">Button with locator 'id=login-btn' not found.</msg>
+<arg>id=login-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="FAIL" start="2026-03-23T09:04:13.689191" elapsed="0.177283">Button with locator 'id=login-btn' not found.</status>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>A felhasználónév megadása kötelező</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:13.866813" elapsed="0.000141"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>A jelszó megadása kötelező</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:13.867195" elapsed="0.000124"/>
+</kw>
+<tag>login</tag>
+<status status="FAIL" start="2026-03-23T09:04:13.685472" elapsed="0.182137">Button with locator 'id=login-btn' not found.</status>
+</test>
+<test id="s1-s1-t5" name="Hibauzenet helyes megjelenitese sikertelen bejelentkezesnel" line="41">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:13.878309" level="INFO">Typing text 'admin' into text field 'id=username'.</msg>
+<msg time="2026-03-23T09:04:14.021199" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-23.png"&gt;&lt;img src="selenium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-23T09:04:14.021459" level="FAIL">Element with locator 'id=username' not found.</msg>
+<arg>id=username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-03-23T09:04:13.877880" elapsed="0.148991">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${INVALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.027255" elapsed="0.000151"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=login-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.027679" elapsed="0.000116"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=.alert-danger</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.028047" elapsed="0.000107"/>
+</kw>
+<tag>login</tag>
+<status status="FAIL" start="2026-03-23T09:04:13.873444" elapsed="0.154998">Element with locator 'id=username' not found.</status>
+</test>
+<test id="s1-s1-t6" name="Kijelentkezes utan vedett oldalak eleresenek tiltasa" line="48">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:14.036562" level="INFO">Typing text 'admin' into text field 'id=username'.</msg>
+<msg time="2026-03-23T09:04:14.178625" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-23T09:04:14.178896" level="FAIL">Element with locator 'id=username' not found.</msg>
+<arg>id=username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-03-23T09:04:14.036219" elapsed="0.147540">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.184128" elapsed="0.000137"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=login-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.184504" elapsed="0.000121"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=logout-btn</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.184857" elapsed="0.000111"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=logout-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.185188" elapsed="0.000106"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<arg>http://localhost:5173/dashboard</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.185507" elapsed="0.000104"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Bejelentkezés szükséges</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.185830" elapsed="0.000105"/>
+</kw>
+<tag>login</tag>
+<status status="FAIL" start="2026-03-23T09:04:14.032967" elapsed="0.153228">Element with locator 'id=username' not found.</status>
+</test>
+<test id="s1-s1-t7" name="Sikeres uj auto felvitele (happy path)" line="58">
+<kw name="Login As Valid User">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:14.198701" level="INFO">Opening url 'https://parking-garage-app.netlify.app/n'</msg>
+<arg>https://parking-garage-app.netlify.app/n</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-03-23T09:04:14.198492" elapsed="0.236456"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:14.435557" level="INFO">Typing text 'admin' into text field 'id=username'.</msg>
+<msg time="2026-03-23T09:04:14.602760" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-25.png"&gt;&lt;img src="selenium-screenshot-25.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-23T09:04:14.603019" level="FAIL">Element with locator 'id=username' not found.</msg>
+<arg>id=username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-03-23T09:04:14.435176" elapsed="0.176837">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.612226" elapsed="0.000132"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=login-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.612491" elapsed="0.000100"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=logout-btn</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.612716" elapsed="0.000099"/>
+</kw>
+<status status="FAIL" start="2026-03-23T09:04:14.198123" elapsed="0.414839">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=new-car-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.613279" elapsed="0.000132"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=plate</arg>
+<arg>ABC-123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.613678" elapsed="0.000117"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=brand</arg>
+<arg>Toyota</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.614049" elapsed="0.000107"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=model</arg>
+<arg>Corolla</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.614402" elapsed="0.000104"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=save-car-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.614745" elapsed="0.000101"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Sikeres mentés</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:14.615084" elapsed="0.000103"/>
+</kw>
+<tag>car</tag>
+<status status="FAIL" start="2026-03-23T09:04:14.194901" elapsed="0.420570">Element with locator 'id=username' not found.</status>
+</test>
+<test id="s1-s1-t8" name="Kotelezo mezok ellenorzese mentes elott" line="68">
+<kw name="Login As Valid User">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:14.628770" level="INFO">Opening url 'https://parking-garage-app.netlify.app/n'</msg>
+<arg>https://parking-garage-app.netlify.app/n</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-03-23T09:04:14.628570" elapsed="0.241015"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:14.870511" level="INFO">Typing text 'admin' into text field 'id=username'.</msg>
+<msg time="2026-03-23T09:04:15.020105" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-26.png"&gt;&lt;img src="selenium-screenshot-26.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-23T09:04:15.020550" level="FAIL">Element with locator 'id=username' not found.</msg>
+<arg>id=username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-03-23T09:04:14.869955" elapsed="0.156535">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.026739" elapsed="0.000159"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=login-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.027038" elapsed="0.000107"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=logout-btn</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.027288" elapsed="0.000102"/>
+</kw>
+<status status="FAIL" start="2026-03-23T09:04:14.628219" elapsed="0.399318">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=new-car-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.027853" elapsed="0.000126"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=save-car-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.028237" elapsed="0.000112"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>A rendszám megadása kötelező</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.028595" elapsed="0.000109"/>
+</kw>
+<tag>car</tag>
+<status status="FAIL" start="2026-03-23T09:04:14.623948" elapsed="0.405044">Element with locator 'id=username' not found.</status>
+</test>
+<test id="s1-s1-t9" name="Hibasan megadott rendszam formatum kezelese" line="75">
+<kw name="Login As Valid User">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:15.045151" level="INFO">Opening url 'https://parking-garage-app.netlify.app/n'</msg>
+<arg>https://parking-garage-app.netlify.app/n</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-03-23T09:04:15.044931" elapsed="0.238824"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:15.284482" level="INFO">Typing text 'admin' into text field 'id=username'.</msg>
+<msg time="2026-03-23T09:04:15.445990" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-27.png"&gt;&lt;img src="selenium-screenshot-27.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-23T09:04:15.446303" level="FAIL">Element with locator 'id=username' not found.</msg>
+<arg>id=username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-03-23T09:04:15.283990" elapsed="0.167732">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.451957" elapsed="0.000137"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=login-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.452244" elapsed="0.000110"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=logout-btn</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.452509" elapsed="0.000111"/>
+</kw>
+<status status="FAIL" start="2026-03-23T09:04:15.044582" elapsed="0.408191">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=new-car-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.453059" elapsed="0.000130"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=plate</arg>
+<arg>123-ABC</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.453446" elapsed="0.000110"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=save-car-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.453814" elapsed="0.000118"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Hibás rendszám formátum</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.454181" elapsed="0.000108"/>
+</kw>
+<tag>car</tag>
+<status status="FAIL" start="2026-03-23T09:04:15.036799" elapsed="0.417772">Element with locator 'id=username' not found.</status>
+</test>
+<test id="s1-s1-t10" name="Duplikalt rendszam mentesenek kezelese" line="83">
+<kw name="Login As Valid User">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:15.467625" level="INFO">Opening url 'https://parking-garage-app.netlify.app/n'</msg>
+<arg>https://parking-garage-app.netlify.app/n</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-03-23T09:04:15.467426" elapsed="0.232739"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:15.701043" level="INFO">Typing text 'admin' into text field 'id=username'.</msg>
+<msg time="2026-03-23T09:04:15.884308" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-28.png"&gt;&lt;img src="selenium-screenshot-28.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-23T09:04:15.885036" level="FAIL">Element with locator 'id=username' not found.</msg>
+<arg>id=username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-03-23T09:04:15.700489" elapsed="0.196228">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.897110" elapsed="0.000233"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=login-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.897589" elapsed="0.000191"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=logout-btn</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.898012" elapsed="0.000187"/>
+</kw>
+<status status="FAIL" start="2026-03-23T09:04:15.467076" elapsed="0.431370">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=new-car-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.898875" elapsed="0.000198"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=plate</arg>
+<arg>ABC-123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.899458" elapsed="0.000172"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=brand</arg>
+<arg>Toyota</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.900069" elapsed="0.000172"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=model</arg>
+<arg>Corolla</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.900608" elapsed="0.000170"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=save-car-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.901138" elapsed="0.000167"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Már létezik ilyen rendszám</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:15.901658" elapsed="0.000166"/>
+</kw>
+<tag>car</tag>
+<status status="FAIL" start="2026-03-23T09:04:15.463809" elapsed="0.438423">Element with locator 'id=username' not found.</status>
+</test>
+<test id="s1-s1-t11" name="Auto adatainak sikeres modositasa" line="93">
+<kw name="Login As Valid User">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:15.917508" level="INFO">Opening url 'https://parking-garage-app.netlify.app/n'</msg>
+<arg>https://parking-garage-app.netlify.app/n</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-03-23T09:04:15.917285" elapsed="1.761787"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:17.679662" level="INFO">Typing text 'admin' into text field 'id=username'.</msg>
+<msg time="2026-03-23T09:04:17.820798" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-29.png"&gt;&lt;img src="selenium-screenshot-29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-23T09:04:17.821227" level="FAIL">Element with locator 'id=username' not found.</msg>
+<arg>id=username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-03-23T09:04:17.679296" elapsed="0.148704">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:17.828217" elapsed="0.000131"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=login-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:17.828481" elapsed="0.000100"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=logout-btn</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:17.828708" elapsed="0.000099"/>
+</kw>
+<status status="FAIL" start="2026-03-23T09:04:15.916889" elapsed="1.912068">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>xpath=//tr[td[text()='ABC-123']]/td/button[@class='edit-btn']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:17.829215" elapsed="0.000126"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=model</arg>
+<arg>Corolla Hybrid</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:17.829591" elapsed="0.000113"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=save-car-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:17.829943" elapsed="0.000124"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Sikeres mentés</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:17.830339" elapsed="0.000111"/>
+</kw>
+<tag>car</tag>
+<status status="FAIL" start="2026-03-23T09:04:15.913436" elapsed="1.917305">Element with locator 'id=username' not found.</status>
+</test>
+<test id="s1-s1-t12" name="Torles megerosito ablakkal" line="101">
+<kw name="Login As Valid User">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:17.847696" level="INFO">Opening url 'https://parking-garage-app.netlify.app/n'</msg>
+<arg>https://parking-garage-app.netlify.app/n</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-03-23T09:04:17.847476" elapsed="3.319199"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:21.167340" level="INFO">Typing text 'admin' into text field 'id=username'.</msg>
+<msg time="2026-03-23T09:04:21.337421" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-30.png"&gt;&lt;img src="selenium-screenshot-30.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-23T09:04:21.337702" level="FAIL">Element with locator 'id=username' not found.</msg>
+<arg>id=username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-03-23T09:04:21.166918" elapsed="0.176647">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:21.343778" elapsed="0.000129"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=login-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:21.344035" elapsed="0.000098"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=logout-btn</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:21.344266" elapsed="0.000098"/>
+</kw>
+<status status="FAIL" start="2026-03-23T09:04:17.847072" elapsed="3.497428">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>xpath=//tr[td[text()='ABC-123']]/td/button[@class='delete-btn']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:21.344793" elapsed="0.000105"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=confirm-delete-modal</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:21.345160" elapsed="0.000120"/>
+</kw>
+<tag>car</tag>
+<status status="FAIL" start="2026-03-23T09:04:17.840294" elapsed="3.505277">Element with locator 'id=username' not found.</status>
+</test>
+<test id="s1-s1-t13" name="Torles megszakitasa (Megse folyamattal)" line="107">
+<kw name="Login As Valid User">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:21.361930" level="INFO">Opening url 'https://parking-garage-app.netlify.app/n'</msg>
+<arg>https://parking-garage-app.netlify.app/n</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-03-23T09:04:21.361724" elapsed="0.240599"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:21.603179" level="INFO">Typing text 'admin' into text field 'id=username'.</msg>
+<msg time="2026-03-23T09:04:21.748976" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-31.png"&gt;&lt;img src="selenium-screenshot-31.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-23T09:04:21.749441" level="FAIL">Element with locator 'id=username' not found.</msg>
+<arg>id=username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-03-23T09:04:21.602577" elapsed="0.151461">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:21.754251" elapsed="0.000129"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=login-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:21.754513" elapsed="0.000104"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=logout-btn</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:21.754743" elapsed="0.000098"/>
+</kw>
+<status status="FAIL" start="2026-03-23T09:04:21.361339" elapsed="0.393664">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>xpath=//tr[td[text()='ABC-123']]/td/button[@class='delete-btn']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:21.755414" elapsed="0.000365"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=cancel-delete-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:21.756243" elapsed="0.000260"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" owner="SeleniumLibrary">
+<arg>id=confirm-delete-modal</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:21.756930" elapsed="0.000304"/>
+</kw>
+<tag>car</tag>
+<status status="FAIL" start="2026-03-23T09:04:21.353527" elapsed="0.404336">Element with locator 'id=username' not found.</status>
+</test>
+<test id="s1-s1-t14" name="Megerosito ablak gombjainak helyes mukodese" line="114">
+<kw name="Login As Valid User">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:21.771157" level="INFO">Opening url 'https://parking-garage-app.netlify.app/n'</msg>
+<arg>https://parking-garage-app.netlify.app/n</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-03-23T09:04:21.770945" elapsed="0.273914"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-23T09:04:22.045667" level="INFO">Typing text 'admin' into text field 'id=username'.</msg>
+<msg time="2026-03-23T09:04:22.169360" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-32.png"&gt;&lt;img src="selenium-screenshot-32.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-23T09:04:22.169639" level="FAIL">Element with locator 'id=username' not found.</msg>
+<arg>id=username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-03-23T09:04:22.045140" elapsed="0.131033">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:22.176396" elapsed="0.000138"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=login-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:22.176668" elapsed="0.000104"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=logout-btn</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:22.176897" elapsed="0.000113"/>
+</kw>
+<status status="FAIL" start="2026-03-23T09:04:21.770539" elapsed="0.406609">Element with locator 'id=username' not found.</status>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>xpath=//tr[td[text()='ABC-123']]/td/button[@class='delete-btn']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:22.177457" elapsed="0.000128"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>id=confirm-delete-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:22.177847" elapsed="0.000109"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Sikeres törlés</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-03-23T09:04:22.178201" elapsed="0.000108"/>
+</kw>
+<tag>car</tag>
+<status status="FAIL" start="2026-03-23T09:04:21.767047" elapsed="0.411546">Element with locator 'id=username' not found.</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-03-23T09:04:22.188221" elapsed="2.200946"/>
+</kw>
+<status status="FAIL" start="2026-03-23T09:04:11.672668" elapsed="12.716760"/>
+</suite>
+<status status="FAIL" start="2026-03-23T09:04:11.629877" elapsed="12.766533"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="14" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="8" skip="0">car</stat>
+<stat pass="0" fail="6" skip="0">login</stat>
+</tag>
+<suite>
+<stat name="Garege" id="s1" pass="0" fail="14" skip="0">Garege</stat>
+<stat name="Login" id="s1-s1" pass="0" fail="14" skip="0">Garege.Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
